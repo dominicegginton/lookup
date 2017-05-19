@@ -18,7 +18,7 @@ def Main():
     print("| |  | | | | | | | ' /| | | | |_) |")
     print("| |__| |_| | |_| | . \| |_| |  __/ ")
     print("|_____\___/ \___/|_|\_\\\___/|_|    ")
-    print("")
+    print("\n")
 
     # if address is supplied
     if args.address:
@@ -28,11 +28,30 @@ def Main():
     
     if r.status_code == 200:
         # sort and print responce
-        requestJSON = r.json() 
-        for key, value in requestJSON.items():
-            print(str(key)+': '+str(value))
+        requestJSON = r.json()
+        
+        if requestJSON['status'] == 'success':
+            lineWidth = 10
+            print('Lookup Information For : ' + requestJSON['query'])
+            
+            print('\nGeneral IP Information')
+            print(''.ljust(lineWidth)+ 'ISP: ' + requestJSON['isp'])
+            print(''.ljust(lineWidth)+ 'AS number / name: ' + requestJSON['as'])
+            print(''.ljust(lineWidth)+ 'Organization name: ' + requestJSON['org'])
+            print(''.ljust(lineWidth)+ 'Organization name: ' + requestJSON['org'])
+
+            print('\nGeolocation IP Information')
+            print(''.ljust(lineWidth)+ 'Latitude: ' + str(requestJSON['lat']))
+            print(''.ljust(lineWidth)+ 'Longitude: ' + str(requestJSON['lon']))
+            print(''.ljust(lineWidth)+ 'Country: ' + requestJSON['country'] + ' ' + requestJSON['countryCode'])
+            print(''.ljust(lineWidth)+ 'Region: ' + requestJSON['regionName'] + ' ' + requestJSON['region'])
+            print(''.ljust(lineWidth)+ 'City: ' + requestJSON['city'])
+            print(''.ljust(lineWidth)+ 'Zip / Postcode: ' + requestJSON['zip'])
+            print(''.ljust(lineWidth)+ 'Timezone: ' + requestJSON['timezone'])
+        elif requestJSON['status'] == 'fail':
+            print('Sorry we could not find: ' + requestJSON['query'] + '\n')
     else:
-        print('Error in sending request')
+        print('Error: ' + r.status_code)
 
 if __name__ == '__main__':
     Main()
