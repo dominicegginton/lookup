@@ -12,12 +12,12 @@ The easiest way to start using Lookup is to downalod a setup package for your sy
 
 ### Clone The repo
 
-Want the sorce code ? Great ! Check you have theres things first: 
+Want the sorce code ? Great ! Check you have the prerequisites: 
 
 - [Python 3](https://www.python.org/)
 - [Requests](http://docs.python-requests.org/en/master/)
 
-Once you have your Prerequisites sorted clone and fire up Lookup
+Once you have your prerequisites sorted clone and fire up Lookup
 
 ```
 git clone https://github.com/dominicegginton/lookup.git
