@@ -6,10 +6,6 @@ Lookup IP addresses right from your terminal. No need to keep serching online fo
 
 These instructions will get you a copy of the project up and running on your local machine.
 
-### Download An Executabl
-
-The easiest way to start using Lookup is to downalod a setup package for your system.
-
 ### Clone The repo
 
 Want the sorce code ? Great ! Check you have the prerequisites: 
