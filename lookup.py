@@ -1,11 +1,15 @@
 # File Name: lookup.py
-# Description: use this small handy program to lookup any ip adress. lookup uses the api focurl und at http://ip-api.com/
+""" Description: use this small handy program to lookup any ip adress.
+    lookup uses the api focurl und at http://ip-api.com/ """
 # https://github.com/dominicegginton/lookup
 
 # import dependencys
-import requests,argparse
+import argparse
+import requests
 
-def Main():
+def main():
+
+    """ Main  """
 
     # args parser setup
     parser = argparse.ArgumentParser(description='Lookup by Dominic Egginton')
@@ -22,36 +26,38 @@ def Main():
 
     # if address is supplied
     if args.address:
-        r = requests.get('http://ip-api.com/json/'+args.address)
+        request = requests.get('http://ip-api.com/json/'+args.address)
     else:
-        r = requests.get('http://ip-api.com/json/')
-    
-    if r.status_code == 200:
+        request = requests.get('http://ip-api.com/json/')
+
+    if request.status_code == 200:
         # sort and print responce
-        requestJSON = r.json()
-        
-        if requestJSON['status'] == 'success':
-            lineWidth = 10
-            print('Lookup Information For : ' + requestJSON['query'])
-            
+        request_json = request.json()
+
+        if request_json['status'] == 'success':
+            line_width = 10
+            print('Lookup Information For : ' + request_json['query'])
+
             print('\nGeneral IP Information')
-            print(''.ljust(lineWidth)+ 'ISP: ' + requestJSON['isp'])
-            print(''.ljust(lineWidth)+ 'AS number / name: ' + requestJSON['as'])
-            print(''.ljust(lineWidth)+ 'Organization name: ' + requestJSON['org'])
-            print(''.ljust(lineWidth)+ 'Organization name: ' + requestJSON['org'])
+            print(''.ljust(line_width)+ 'ISP: ' + request_json['isp'])
+            print(''.ljust(line_width)+ 'AS number / name: ' + request_json['as'])
+            print(''.ljust(line_width)+ 'Organization name: ' + request_json['org'])
+            print(''.ljust(line_width)+ 'Organization name: ' + request_json['org'])
 
             print('\nGeolocation IP Information')
-            print(''.ljust(lineWidth)+ 'Latitude: ' + str(requestJSON['lat']))
-            print(''.ljust(lineWidth)+ 'Longitude: ' + str(requestJSON['lon']))
-            print(''.ljust(lineWidth)+ 'Country: ' + requestJSON['country'] + ' ' + requestJSON['countryCode'])
-            print(''.ljust(lineWidth)+ 'Region: ' + requestJSON['regionName'] + ' ' + requestJSON['region'])
-            print(''.ljust(lineWidth)+ 'City: ' + requestJSON['city'])
-            print(''.ljust(lineWidth)+ 'Zip / Postcode: ' + requestJSON['zip'])
-            print(''.ljust(lineWidth)+ 'Timezone: ' + requestJSON['timezone'])
-        elif requestJSON['status'] == 'fail':
-            print('Sorry we could not find: ' + requestJSON['query'] + '\n')
+            print(''.ljust(line_width)+ 'Latitude: ' + str(request_json['lat']))
+            print(''.ljust(line_width)+ 'Longitude: ' + str(request_json['lon']))
+            print(''.ljust(line_width)+ 'Country: ' + request_json['country']
+                  + ' ' + request_json['countryCode'])
+            print(''.ljust(line_width)+ 'Region: ' + request_json['regionName']
+                  + ' ' + request_json['region'])
+            print(''.ljust(line_width)+ 'City: ' + request_json['city'])
+            print(''.ljust(line_width)+ 'Zip / Postcode: ' + request_json['zip'])
+            print(''.ljust(line_width)+ 'Timezone: ' + request_json['timezone'])
+        elif request_json['status'] == 'fail':
+            print('Sorry we could not find: ' + request_json['query'] + '\n')
     else:
-        print('Error: ' + r.status_code)
+        print('Error: ' + request.status_code)
 
 if __name__ == '__main__':
-    Main()
+    main()
