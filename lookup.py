@@ -3,7 +3,7 @@
 # https://github.com/dominicegginton/lookup
 
 # import dependencys
-import requests,sys,argparse
+import requests,argparse
 
 def Main():
 
