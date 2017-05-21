@@ -24,6 +24,8 @@ def main():
     print("| |__| |_| | |_| | . \| |_| |  __/ ")
     print("|_____\___/ \___/|_|\_\\\___/|_|    ")
     print("\n")
+    print("https://github.com/dominicegginton/lookup")
+    print("\n")
 
     # if address is supplied
     if args.address:
