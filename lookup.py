@@ -14,8 +14,8 @@ def main():
 
     # args parser setup
     parser = argparse.ArgumentParser(description='Lookup by Dominic Egginton')
-    parser.add_argument('-a', metavar='Lookup', type=str, help='lookup adrress')
-    parser.add_argument('-s', metavar='Save', type=str, help='Save result to file')
+    parser.add_argument('-a', '--address', metavar='Lookup', type=str, help='lookup adrress')
+    parser.add_argument('-s', '--save', metavar='Save', type=str, help='Save result to file')
     args = parser.parse_args()
 
     # print header
