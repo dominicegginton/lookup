@@ -3,7 +3,6 @@
     lookup uses the api focurl und at http://ip-api.com/ """
 # https://github.com/dominicegginton/lookup
 
-# import dependencys
 import argparse
 import requests
 
@@ -11,30 +10,19 @@ def main():
 
     """ Main  """
 
-    # args parser setup
     parser = argparse.ArgumentParser(description='Lookup by Dominic Egginton')
     parser.add_argument('-a', '--address', metavar='Lookup', type=str, help='lookup adrress')
     parser.add_argument('-s', '--save', metavar='Save', type=str, help='Save result to file')
     args = parser.parse_args()
 
-    # print header
-    print(" _     ___   ___  _  ___   _ ____  ")
-    print("| |   / _ \ / _ \| |/ / | | |  _ \ ")
-    print("| |  | | | | | | | ' /| | | | |_) |")
-    print("| |__| |_| | |_| | . \| |_| |  __/ ")
-    print("|_____\___/ \___/|_|\_\\\___/|_|    ")
-    print("\n")
-    print("https://github.com/dominicegginton/lookup")
-    print("\n")
+    print_header()
 
-    # if address is supplied
     if args.address:
         request = requests.get('http://ip-api.com/json/'+args.address)
     else:
         request = requests.get('http://ip-api.com/json/')
 
     if request.status_code == 200:
-        # sort and print responce
         request_json = request.json()
         line_width = 10
         printer(request_json, line_width)
@@ -44,7 +32,19 @@ def main():
     else:
         print('Error: ' + request.status_code)
 
+def print_header():
+    """ Print the header of the UI """
+    print(" _     ___   ___  _  ___   _ ____  ")
+    print("| |   / _ \ / _ \| |/ / | | |  _ \ ")
+    print("| |  | | | | | | | ' /| | | | |_) |")
+    print("| |__| |_| | |_| | . \| |_| |  __/ ")
+    print("|_____\___/ \___/|_|\_\\\___/|_|    ")
+    print("\n")
+    print("https://github.com/dominicegginton/lookup")
+    print("\n")
+
 def printer(request_json, line_width):
+    """ Print the main body of the UI """
     if request_json['status'] == 'success':
         print('Lookup Information For : ' + request_json['query'])
         print('\nGeneral IP Information')
