@@ -34,34 +34,33 @@ def main():
     if request.status_code == 200:
         # sort and print responce
         request_json = request.json()
-
-        if request_json['status'] == 'success':
-            line_width = 10
-            print('Lookup Information For : ' + request_json['query'])
-
-            print('\nGeneral IP Information')
-            print(''.ljust(line_width)+ 'ISP: ' + request_json['isp'])
-            print(''.ljust(line_width)+ 'AS number / name: ' + request_json['as'])
-            print(''.ljust(line_width)+ 'Organization name: ' + request_json['org'])
-
-            print('\nGeolocation IP Information')
-            print(''.ljust(line_width)+ 'Latitude: ' + str(request_json['lat']))
-            print(''.ljust(line_width)+ 'Longitude: ' + str(request_json['lon']))
-            print(''.ljust(line_width)+ 'Country: ' + request_json['country']
-                  + ' ' + request_json['countryCode'])
-            print(''.ljust(line_width)+ 'Region: ' + request_json['regionName']
-                  + ' ' + request_json['region'])
-            print(''.ljust(line_width)+ 'City: ' + request_json['city'])
-            print(''.ljust(line_width)+ 'Zip / Postcode: ' + request_json['zip'])
-            print(''.ljust(line_width)+ 'Timezone: ' + request_json['timezone'])
-        elif request_json['status'] == 'fail':
-            print('Sorry we could not find: ' + request_json['query'] + '\n')
-
+        line_width = 10
+        printer(request_json, line_width)
         if args.save:
             save(request_json, args.save, line_width)
 
     else:
         print('Error: ' + request.status_code)
+
+def printer(request_json, line_width):
+    if request_json['status'] == 'success':
+        print('Lookup Information For : ' + request_json['query'])
+        print('\nGeneral IP Information')
+        print(''.ljust(line_width)+ 'ISP: ' + request_json['isp'])
+        print(''.ljust(line_width)+ 'AS number / name: ' + request_json['as'])
+        print(''.ljust(line_width)+ 'Organization name: ' + request_json['org'])
+        print('\nGeolocation IP Information')
+        print(''.ljust(line_width)+ 'Latitude: ' + str(request_json['lat']))
+        print(''.ljust(line_width)+ 'Longitude: ' + str(request_json['lon']))
+        print(''.ljust(line_width)+ 'Country: ' + request_json['country']
+              + ' ' + request_json['countryCode'])
+        print(''.ljust(line_width)+ 'Region: ' + request_json['regionName']
+              + ' ' + request_json['region'])
+        print(''.ljust(line_width)+ 'City: ' + request_json['city'])
+        print(''.ljust(line_width)+ 'Zip / Postcode: ' + request_json['zip'])
+        print(''.ljust(line_width)+ 'Timezone: ' + request_json['timezone'])
+    elif request_json['status'] == 'fail':
+        print('Sorry we could not find: ' + request_json['query'] + '\n')
 
 def save(request_json, filename, line_width):
     ''' save '''
