@@ -5,7 +5,6 @@
 
 # import dependencys
 import argparse
-import io
 import requests
 
 def main():
@@ -44,7 +43,6 @@ def main():
             print(''.ljust(line_width)+ 'ISP: ' + request_json['isp'])
             print(''.ljust(line_width)+ 'AS number / name: ' + request_json['as'])
             print(''.ljust(line_width)+ 'Organization name: ' + request_json['org'])
-            print(''.ljust(line_width)+ 'Organization name: ' + request_json['org'])
 
             print('\nGeolocation IP Information')
             print(''.ljust(line_width)+ 'Latitude: ' + str(request_json['lat']))
@@ -58,8 +56,36 @@ def main():
             print(''.ljust(line_width)+ 'Timezone: ' + request_json['timezone'])
         elif request_json['status'] == 'fail':
             print('Sorry we could not find: ' + request_json['query'] + '\n')
+
+        if args.save:
+            save(request_json, args.save, line_width)
+
     else:
         print('Error: ' + request.status_code)
+
+def save(request_json, filename, line_width):
+    ''' save '''
+    print('saving to file')
+    writer = open(str(filename), 'w')
+    writer.writelines('Lookup Information For : ' + request_json['query'])
+    writer.writelines('\n')
+    writer.writelines('\nGeneral IP Information')
+    writer.write('\n'.ljust(line_width)+ 'ISP: ' + request_json['isp'])
+    writer.write('\n'.ljust(line_width)+ 'AS number / name: ' + request_json['as'])
+    writer.write('\n'.ljust(line_width)+ 'Organization name: ' + request_json['org'])
+    writer.write('\n')
+    writer.write('\nGeolocation IP Information')
+    writer.write('\n'.ljust(line_width)+ 'Latitude: ' + str(request_json['lat']))
+    writer.write('\n'.ljust(line_width)+ 'Longitude: ' + str(request_json['lon']))
+    writer.write('\n'.ljust(line_width)+ 'Country: ' + request_json['country']
+                 + ' ' + request_json['countryCode'])
+    writer.write('\n'.ljust(line_width)+ 'Region: ' + request_json['regionName']
+                 + ' ' + request_json['region'])
+    writer.write('\n'.ljust(line_width)+ 'City: ' + request_json['city'])
+    writer.write('\n'.ljust(line_width)+ 'Zip / Postcode: ' + request_json['zip'])
+    writer.write('\n'.ljust(line_width)+ 'Timezone: ' + request_json['timezone'])
+    writer.write('\n')
+    writer.close()
 
 if __name__ == '__main__':
     main()
