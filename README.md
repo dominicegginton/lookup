@@ -26,3 +26,4 @@ Right ill be straight with you, this is such a simple piece of software so there
 
 - -h Show the help menu
 - -a 'lookup adress' Lookup the specified address
+- -s 'save to file' Save the result to a file. file name must be given
