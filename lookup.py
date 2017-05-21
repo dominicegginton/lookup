@@ -5,6 +5,7 @@
 
 # import dependencys
 import argparse
+import io
 import requests
 
 def main():
@@ -13,7 +14,8 @@ def main():
 
     # args parser setup
     parser = argparse.ArgumentParser(description='Lookup by Dominic Egginton')
-    parser.add_argument('-a', '--address', metavar='lookup', type=str, help='lookup adrress')
+    parser.add_argument('-a', metavar='Lookup', type=str, help='lookup adrress')
+    parser.add_argument('-s', metavar='Save', type=str, help='Save result to file')
     args = parser.parse_args()
 
     # print header
