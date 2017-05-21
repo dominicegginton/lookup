@@ -6,6 +6,10 @@ Lookup IP addresses right from your terminal. No need to keep serching online fo
 
 These instructions will get you a copy of the project up and running on your local machine.
 
+### Download Binaries
+
+*COMING SOON*
+
 ### Clone The repo
 
 Want the sorce code ? Great ! Check you have the prerequisites: 
