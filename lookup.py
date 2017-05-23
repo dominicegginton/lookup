@@ -34,13 +34,11 @@ def main():
 
 def print_header():
     """ Print the header of the UI """
-    print(" _     ___   ___  _  ___   _ ____  ")
+    print("\033[1;31m _     ___   ___  _  ___   _ ____  ")
     print("| |   / _ \ / _ \| |/ / | | |  _ \ ")
     print("| |  | | | | | | | ' /| | | | |_) |")
     print("| |__| |_| | |_| | . \| |_| |  __/ ")
-    print("|_____\___/ \___/|_|\_\\\___/|_|    ")
-    print("\n")
-    print("https://github.com/dominicegginton/lookup")
+    print("|_____\___/ \___/|_|\_\\\___/|_|    \033[1;m     [ Dominic Egginton | github.com/dominicegginton/lookup ]")
     print("\n")
 
 def printer(request_json, line_width):
