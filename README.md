@@ -29,4 +29,4 @@ Right ill be straight with you, this is such a simple piece of software so there
 
 ## Feature Requests & Issues
 
-Wanna see new seatures or start a new issue [here](https://github.com/dominicegginton/lookup/issues)
+Wanna see new seatures or start a new issue [here](https://github.com/dominicegginton/lookup/issues) 
