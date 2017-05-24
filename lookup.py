@@ -13,7 +13,7 @@ def main():
     parser = argparse.ArgumentParser(description='Lookup by Dominic Egginton')
     parser.add_argument('-a', '--address', metavar='Lookup', type=str, help='lookup address')
     parser.add_argument('-s', '--save', metavar='Save', type=str, help='Save result to file')
-    parser.add_argument('-p', '--ping', metavar='Ping', help='Ping the address')
+    parser.add_argument('-p', '--ping', help='Ping the address', action='store_true')
     args = parser.parse_args()
 
     print_header()
