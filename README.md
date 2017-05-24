@@ -15,7 +15,7 @@ These instructions will get you a copy of the project up and running on your loc
 Want the sorce code ? Great ! Check you have the prerequisites: 
 
 - [Python 3](https://www.python.org/)
-- [Requests](http://docs.python-requests.org/en/master/)
+- [Requests](http://docs.python-requests.org/en/master/user/install/#install)
 
 Once you have your prerequisites sorted clone and fire up Lookup
 
@@ -31,6 +31,7 @@ Right ill be straight with you, this is such a simple piece of software so there
 - -h Show the help menu
 - -a 'lookup adress' Lookup the specified address
 - -s 'save to file' Save the result to a file. file name must be given
+- -p 'Ping' Ping the given adress
 
 ## Feature Requests
 
