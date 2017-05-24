@@ -6,7 +6,7 @@
 import argparse
 import requests
 from platform import system as os_name
-from os import system as system_call
+from os import system as os_call
 
 def main():
 
@@ -93,9 +93,9 @@ def save(request_json, filename, line_width):
 
 def ping(address):
     if os_name().lower() == 'windows':
-        print('\n' + system_call('ping -n 2 ' + address))
+        print('\n' + os_call('ping -n 2 ' + address))
     else:
-        print('\n' + str(system_call('ping -c 2 ' + address)))
+        print('\n' + str(os_call('ping -c 2 ' + address)))
 
 if __name__ == '__main__':
     main()
