@@ -5,6 +5,8 @@
 
 import argparse
 import requests
+from platform import system as os_name
+from os import system as system_call
 
 def main():
 
@@ -27,6 +29,8 @@ def main():
         request_json = request.json()
         line_width = 10
         printer(request_json, line_width)
+        if args.ping:
+            ping(request_json['query'])
         if args.save:
             save(request_json, args.save, line_width)
 
@@ -59,7 +63,7 @@ def printer(request_json, line_width):
               + ' ' + request_json['region'])
         print(''.ljust(line_width)+ 'City: ' + request_json['city'])
         print(''.ljust(line_width)+ 'Zip / Postcode: ' + request_json['zip'])
-        print(''.ljust(line_width)+ 'Timezone: ' + request_json['timezone'])
+        print(''.ljust(line_width)+ 'Timezone: ' + request_json['timezone'] + '\n')
     elif request_json['status'] == 'fail':
         print('Sorry we could not find: ' + request_json['query'] + '\n')
 
@@ -86,6 +90,12 @@ def save(request_json, filename, line_width):
     writer.write('\n'.ljust(line_width)+ 'Timezone: ' + request_json['timezone'])
     writer.write('\n')
     writer.close()
+
+def ping(address):
+    if os_name().lower() == 'windows':
+        print('\n' + system_call('ping -n 2 ' + address))
+    else:
+        print('\n' + str(system_call('ping -c 2 ' + address)))
 
 if __name__ == '__main__':
     main()
