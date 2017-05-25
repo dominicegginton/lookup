@@ -4,9 +4,9 @@
 # https://github.com/dominicegginton/lookup
 
 import argparse
-import requests
 from platform import system as os_name
-from os import system as os_call
+import os
+import requests
 
 def main():
 
@@ -97,16 +97,15 @@ def save(request_json, filename, line_width):
 def ping(address):
     """ping"""
     if os_name().lower() == 'windows':
-        print('\n' + os_call('ping -n 2 ' + address))
+        os.system('ping -n 2 ' + address)
     else:
-        print('\n' + str(os_call('ping -c 2 ' + address)))
+        os.system('ping -c 2 ' + address)
 
 def trace(address):
     """tracerout"""
     if os_name().lower() == 'windows':
-        print('\n\n' + os_call('tracert ' + address))
+        os.system('tracert ' + address)
     else:
-        print('\n\n' + str(os_call('traceroute ' + address)))
-
+        os.system('traceroute ' + address)
 if __name__ == '__main__':
     main()
