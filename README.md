@@ -1,4 +1,4 @@
-# Lookup
+# Lookup 
 
 Lookup IP addresses right from your terminal. No need to keep serching online for an IP lookup service you can have one right where you work. 
 
