@@ -16,6 +16,7 @@ def main():
     parser.add_argument('-a', '--address', metavar='Lookup', type=str, help='lookup address')
     parser.add_argument('-s', '--save', metavar='Save', type=str, help='Save result to file')
     parser.add_argument('-p', '--ping', help='Ping the address', action='store_true')
+    parser.add_argument('-t', '--traceroute', help='Trace the address', action='store_true')
     args = parser.parse_args()
 
     print_header()
@@ -31,6 +32,8 @@ def main():
         printer(request_json, line_width)
         if args.ping:
             ping(request_json['query'])
+        if args.traceroute:
+            trace(request_json['query'])
         if args.save:
             save(request_json, args.save, line_width)
 
@@ -92,10 +95,18 @@ def save(request_json, filename, line_width):
     writer.close()
 
 def ping(address):
+    """ping"""
     if os_name().lower() == 'windows':
         print('\n' + os_call('ping -n 2 ' + address))
     else:
         print('\n' + str(os_call('ping -c 2 ' + address)))
+
+def trace(address):
+    """tracerout"""
+    if os_name().lower() == 'windows':
+        print('\n\n' + os_call('tracert ' + address))
+    else:
+        print('\n\n' + str(os_call('traceroute ' + address)))
 
 if __name__ == '__main__':
     main()
