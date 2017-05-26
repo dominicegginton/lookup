@@ -105,6 +105,7 @@ def ping(address):
 
 def trace(address):
     """tracerout"""
+    print('\n')
     if os_name().lower() == 'windows':
         os.system('tracert ' + address)
     else:
