@@ -11,6 +11,7 @@ import requests
 def main():
 
     """ Main  """
+    line_width = 10
 
     parser = argparse.ArgumentParser(description='Lookup by Dominic Egginton')
     parser.add_argument('-a', '--address', metavar='Lookup', type=str, help='lookup address')
@@ -25,10 +26,8 @@ def main():
             request = requests.get('http://ip-api.com/json/'+args.address)
         else:
             request = requests.get('http://ip-api.com/json/')
-
-        if request.json()['status'] == 'success':
-            request_json = request.json()
-            line_width = 10
+        request_json = request.json()
+        if request_json['status'] == 'success':
             printer(request_json, line_width)
             if args.ping:
                 ping(request_json['query'])
@@ -36,8 +35,10 @@ def main():
                 trace(request_json['query'])
             if args.save:
                 save(request_json, args.save, line_width)
-        elif request.json()['status'] == 'fail':
-            print('Error: ' + request.json()['message'])
+        elif request_json['status'] == 'fail':
+            print('Error:')
+            print(''.ljust(line_width)+ 'Query sent: ' + request_json['query'])
+            print(''.ljust(line_width)+ 'Message: ' + request_json['message'])
         else:
             print('Error: ' + str(request.status_code))
     except requests.exceptions.RequestException as error:
