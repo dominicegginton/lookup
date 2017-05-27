@@ -1,7 +1,6 @@
-# File Name: lookup.py
+#!/usr/bin/python
 """ Description: use this small handy program to lookup any ip adress.
     lookup uses the api focurl und at http://ip-api.com/ """
-# https://github.com/dominicegginton/lookup
 
 import argparse
 from platform import system as os_name
