@@ -2,25 +2,25 @@
 
 Lookup IP addresses right from your terminal. No need to keep serching online for an IP lookup service you can have one right where you work. 
 
-## Getting Started
+## Installation
 
-These instructions will get you a copy of the project up and running on your local machine.
-
-### Prerequisites
-
-- [Python 3](https://www.python.org/)
-- [Requests](http://docs.python-requests.org/en/master/user/install/#install)
-
-### Get & Run lookup.py
+Lookup is available on PyPI. You can install it through pip:
 
 ```
-git clone https://github.com/dominicegginton/lookup.git
-cd lookup/
-python3 lookup.py
+pip install ip-lookup
 ```
-## Arguments & Options
 
-Right ill be straight with you, this is such a simple piece of software so theres not much to learn.
+Or 
+
+```
+pip3 install ip-lookup
+```
+
+## Useage
+
+```
+lookup [options]
+```
 
 - -h Show the help menu
 - -a 'lookup adress' Lookup the specified address
