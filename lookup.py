@@ -42,6 +42,7 @@ def main():
             print('Error: ' + str(request.status_code))
     except requests.exceptions.RequestException as error:
         print('Error: ' + str(error))
+        print('\n Check your internet connection')
 
 def print_header():
     """ Print the header of the UI """
