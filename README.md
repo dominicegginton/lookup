@@ -10,12 +10,6 @@ Lookup is available on PyPI. You can install it through pip:
 pip install ip-lookup
 ```
 
-Or 
-
-```
-pip3 install ip-lookup
-```
-
 ## Useage
 
 ```
