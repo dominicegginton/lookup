@@ -3,9 +3,11 @@
     lookup uses the api focurl und at http://ip-api.com/ """
 
 import argparse
-from platform import system as os_name
 import os
+from platform import system as os_name
+
 import requests
+
 
 def main():
 
