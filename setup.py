@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='ip-lookup',
-    version='1.1',
+    version='1.2',
     py_modules=['lookup'],
     platforms='any',
     license='MIT',
