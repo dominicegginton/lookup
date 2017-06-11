@@ -7,12 +7,12 @@ import os
 from platform import system as os_name
 
 import requests
-
+from colorama import init, Fore, Style
 
 def main():
-
     """ Main  """
     line_width = 10
+    init()
 
     parser = argparse.ArgumentParser(description='Lookup by Dominic Egginton')
     parser.add_argument('-a', '--address', metavar='Lookup', type=str, help='lookup address')
@@ -48,11 +48,11 @@ def main():
 
 def print_header():
     """ Print the header of the UI """
-    print("\033[1;31m _     ___   ___  _  ___   _ ____  ")
+    print(Fore.CYAN + " _     ___   ___  _  ___   _ ____  ")
     print("| |   / _ \ / _ \| |/ / | | |  _ \ ")
     print("| |  | | | | | | | ' /| | | | |_) |")
     print("| |__| |_| | |_| | . \| |_| |  __/ ")
-    print("|_____\___/ \___/|_|\_\\\___/|_|    \033[1;m     [ Dominic Egginton | github.com/dominicegginton/lookup ]")
+    print("|_____\___/ \___/|_|\_\\\___/|_|    " + Style.RESET_ALL + "     [ Dominic Egginton | github.com/dominicegginton/lookup ]")
     print("\n")
 
 def printer(request_json, line_width):
