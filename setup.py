@@ -8,6 +8,7 @@ setup(
     platforms='any',
     license='MIT',
     author='Dominic Egginton',
+    url='https://github.com/dominicegginton/lookup',
     author_email='dominic.egginton@gmail.com',
     description='IP lookup via the command line',
     entry_points={
