@@ -1,6 +1,5 @@
 #!/usr/bin/python
-""" Description: use this small handy program to lookup any ip adress.
-    lookup uses the api focurl und at http://ip-api.com/ """
+''' lookup.py by Dominic Egginton '''
 
 import argparse
 import os
@@ -73,7 +72,6 @@ def printer(request_json, line_width):
     print(''.ljust(line_width)+ 'Zip / Postcode: ' + request_json['zip'])
     print(''.ljust(line_width)+ 'Timezone: ' + request_json['timezone'] + '\n')
 
-
 def save(request_json, filename, line_width):
     ''' save '''
     print('saving to file')
@@ -112,5 +110,6 @@ def trace(address):
         os.system('tracert ' + address)
     else:
         os.system('traceroute ' + address)
+
 if __name__ == '__main__':
     main()
