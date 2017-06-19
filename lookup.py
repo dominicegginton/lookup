@@ -51,7 +51,7 @@ def print_header():
     print("| |   / _ \ / _ \| |/ / | | |  _ \ ")
     print("| |  | | | | | | | ' /| | | | |_) |")
     print("| |__| |_| | |_| | . \| |_| |  __/ ")
-    print("|_____\___/ \___/|_|\_\\\___/|_|    " + Style.RESET_ALL + "     [ Dominic Egginton | github.com/dominicegginton/lookup ]")
+    print("|_____\___/ \___/|_|\_\\\___/|_|    " + Style.RESET_ALL + "     [ Dominic Egginton | github.com/dominicegginton ]")
     print("\n")
 
 def printer(request_json, line_width):
