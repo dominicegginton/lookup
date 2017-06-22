@@ -1,0 +1,7 @@
+machine:
+  python:
+    version: pypy-3.6.1
+
+test:
+  override:
+    - python lookup.py
