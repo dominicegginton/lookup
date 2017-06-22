@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/dominicegginton/lookup.png?label=ready&title=Ready)](https://waffle.io/dominicegginton/lookup?utm_source=badge)
 # Lookup 
 
 Lookup IP addresses right from your terminal. No need to keep serching online for an IP lookup service you can have one right where you work. 
