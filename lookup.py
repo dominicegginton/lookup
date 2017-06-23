@@ -13,7 +13,7 @@ def main():
     line_width = 10
     init()
 
-    parser = argparse.ArgumentParser(description='Lookup by Dominic Egginton')
+    parser = argparse.ArgumentParser(description='Lookup by Dominic Egginton allows you to do a whois search on any ip or web address')
     parser.add_argument('-a', '--address', metavar='Lookup', type=str, help='lookup address')
     parser.add_argument('-s', '--save', metavar='Save', type=str, help='Save result to file')
     parser.add_argument('-p', '--ping', help='Ping the address', action='store_true')
