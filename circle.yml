@@ -4,4 +4,4 @@ machine:
 
 test:
   override:
-    - python lookup.py
+    - python lookup.py -a 8.8.8.8 -pt
