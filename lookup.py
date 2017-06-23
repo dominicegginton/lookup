@@ -47,7 +47,7 @@ def main():
 
 def print_header():
     """ Print the header of the UI """
-    print(Fore.CYAN + " _     ___   ___  _  ___   _ ____  ")
+    print(Fore.MAGENTA + " _     ___   ___  _  ___   _ ____  ")
     print("| |   / _ \ / _ \| |/ / | | |  _ \ ")
     print("| |  | | | | | | | ' /| | | | |_) |")
     print("| |__| |_| | |_| | . \| |_| |  __/ ")
