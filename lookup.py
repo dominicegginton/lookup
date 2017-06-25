@@ -37,7 +37,7 @@ def main():
                 save(request_json, args.save, line_width)
         elif request_json['status'] == 'fail':
             print('Error:')
-            print(''.ljust(line_width)+ 'Query sent: ' + request_json['query'])
+            print(''.ljust(line_width)+ 'Query sent: ' + Fore.MAGENTA + request_json['query'] + Style.RESET_ALL)
             print(''.ljust(line_width)+ 'Message: ' + request_json['message'])
         else:
             print('Error: ' + str(request.status_code))
