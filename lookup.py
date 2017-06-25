@@ -37,7 +37,7 @@ def main():
                 save(request_json, args.save, line_width)
         elif request_json['status'] == 'fail':
             print('Error:')
-            print(''.ljust(line_width)+ 'Query sent: ' + request_json['query'])
+            print(''.ljust(line_width)+ 'Query sent: ' + Fore.MAGENTA + request_json['query'] + Style.RESET_ALL)
             print(''.ljust(line_width)+ 'Message: ' + request_json['message'])
         else:
             print('Error: ' + str(request.status_code))
@@ -56,7 +56,7 @@ def print_header():
 
 def printer(request_json, line_width):
     """ Print the main body of the UI """
-    print('Lookup Information For : ' + request_json['query'])
+    print('Lookup Information For : ' + Fore.MAGENTA + request_json['query'] + Style.RESET_ALL)
     print('\nGeneral IP Information')
     print(''.ljust(line_width)+ 'ISP: ' + request_json['isp'])
     print(''.ljust(line_width)+ 'AS number / name: ' + request_json['as'])
