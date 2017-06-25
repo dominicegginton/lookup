@@ -56,7 +56,7 @@ def print_header():
 
 def printer(request_json, line_width):
     """ Print the main body of the UI """
-    print('Lookup Information For : ' + request_json['query'])
+    print('Lookup Information For : ' + Fore.MAGENTA + request_json['query'] + Style.RESET_ALL)
     print('\nGeneral IP Information')
     print(''.ljust(line_width)+ 'ISP: ' + request_json['isp'])
     print(''.ljust(line_width)+ 'AS number / name: ' + request_json['as'])
