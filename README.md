@@ -1,5 +1,5 @@
 [![CircleCI](https://circleci.com/gh/dominicegginton/lookup.svg?style=svg)](https://circleci.com/gh/dominicegginton/lookup)
-[![Actions Status](https://github.com/dominicegginton/lookup/workflows/{workflow_name}/badge.svg)](https://github.com/dominicegginton/lookup/actions)
+[![Actions Status](https://github.com/dominicegginton/lookup/workflows/main}/badge.svg)](https://github.com/dominicegginton/lookup/actions)
 # Lookup 
 
 Lookup IP addresses right from your terminal. No need to keep serching online for an IP lookup service you can have one right where you work. 
