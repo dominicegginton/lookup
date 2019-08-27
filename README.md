@@ -1,4 +1,3 @@
-[![CircleCI](https://circleci.com/gh/dominicegginton/lookup.svg?style=svg)](https://circleci.com/gh/dominicegginton/lookup)
 [![Actions Status](https://github.com/dominicegginton/lookup/workflows/CI/badge.svg)](https://github.com/dominicegginton/lookup/actions)
 # Lookup 
 
